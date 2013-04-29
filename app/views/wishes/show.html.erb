@@ -1,0 +1,30 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Title:</b>
+  <%= @wish.title %>
+</p>
+
+<p>
+  <b>Description:</b>
+  <%= @wish.description %>
+</p>
+
+<p>
+  <b>Wish image file name:</b>
+  <%= @wish.wish_image_file_name %>
+</p>
+
+<p>
+  <b>Wish image content type:</b>
+  <%= @wish.wish_image_content_type %>
+</p>
+
+<p>
+  <b>Wish image file size:</b>
+  <%= @wish.wish_image_file_size %>
+</p>
+
+
+<%= link_to 'Edit', edit_wish_path(@wish) %> |
+<%= link_to 'Back', wishes_path %>
