@@ -10,6 +10,11 @@ class WishesController < ApplicationController
     end
   end
 
+  # GET /wishes/list
+  def list
+    @wish_rows = Wish.all.in_groups_of(3)
+  end
+
   # GET /wishes/1
   # GET /wishes/1.json
   def show

@@ -4,9 +4,7 @@
   <tr>
     <th>Title</th>
     <th>Description</th>
-    <th>Wish image file name</th>
-    <th>Wish image content type</th>
-    <th>Wish image file size</th>
+    <th>Image_tag</th>
     <th></th>
     <th></th>
     <th></th>
@@ -16,9 +14,7 @@
   <tr>
     <td><%= wish.title %></td>
     <td><%= wish.description %></td>
-    <td><%= wish.wish_image_file_name %></td>
-    <td><%= wish.wish_image_content_type %></td>
-    <td><%= wish.wish_image_file_size %></td>
+    <td><%= image_tag wish.wish_image.url(:original) %></td>
     <td><%= link_to 'Show', wish %></td>
     <td><%= link_to 'Edit', edit_wish_path(wish) %></td>
     <td><%= link_to 'Destroy', wish, method: :delete, data: { confirm: 'Are you sure?' } %></td>

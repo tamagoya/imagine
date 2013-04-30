@@ -41,3 +41,6 @@ gem 'jquery-rails'
 gem "less-rails"
 gem "twitter-bootstrap-rails"
 gem "therubyracer"
+
+# image upload
+gem "paperclip"
