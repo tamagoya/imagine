@@ -1,6 +1,6 @@
-<h1>Editing wish</h1>
+<h1><%= t("activerecord.models.wish") + " " + t("action.edit") %></h1>
 
 <%= render 'form' %>
 
-<%= link_to 'Show', @wish %> |
-<%= link_to 'Back', wishes_path %>
+<%= link_to t("action.show"), @wish %> |
+<%= link_to t("common.back"), wishes_path %>

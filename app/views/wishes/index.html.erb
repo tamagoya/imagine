@@ -1,10 +1,12 @@
-<h1>Listing wishes</h1>
+<%= render 'sidebar' %>
+
+<h1><%= t("activerecord.models.wish") + " " + t("action.list") %></h1>
 
 <table>
   <tr>
-    <th>Title</th>
-    <th>Description</th>
-    <th>Image_tag</th>
+    <th><%= tm("wish", "title")%></th>
+    <th><%= tm("wish", "description")%></th>
+    <th><%= tm("wish", "wish_image")%></th>
     <th></th>
     <th></th>
     <th></th>
@@ -15,9 +17,9 @@
     <td><%= wish.title %></td>
     <td><%= wish.description %></td>
     <td><%= image_tag wish.wish_image.url(:original) %></td>
-    <td><%= link_to 'Show', wish %></td>
-    <td><%= link_to 'Edit', edit_wish_path(wish) %></td>
-    <td><%= link_to 'Destroy', wish, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+    <td><%= link_to t("action.show"), wish %></td>
+    <td><%= link_to t("action.edit"), edit_wish_path(wish) %></td>
+    <td><%= link_to t("action.destroy"), wish, method: :delete, data: { confirm: t("message.confirm") } %></td>
   </tr>
 <% end %>
 </table>

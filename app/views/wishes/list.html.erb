@@ -1,6 +1,6 @@
 <%= render 'sidebar' %>
 
-<h1>提案・要望 リスト</h1>
+<h1><%= t("activerecord.models.wish") + " " + t("action.list")%></h1>
 
 <% @wish_rows.each do |wish_row| %>
 <div class="row">
@@ -22,8 +22,8 @@
             <h5><%= wish.title %></h5>
             <p><%= wish.description %></p>
             <p>
-              <%= link_to("参加", "#", :class => "btn btn-primary") %>
-              <%= link_to("いいね", "#", :class => "btn btn") %>
+              <%= link_to(t("action.attend"), "#", :class => "btn btn-primary") %>
+              <%= link_to(t("action.like"), "#", :class => "btn btn") %>
             </p>
           </div>
         </div>
