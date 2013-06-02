@@ -1,0 +1,29 @@
+<%= render 'sidebar' %>
+
+<h1><%= t("activerecord.models.guild") + " " + t("action.list") %></h1>
+
+<table>
+  <tr>
+    <th>名前</th>
+    <th>内容</th>
+    <th>画像</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @guilds.each do |guild| %>
+  <tr>
+    <td><%= guild.name %></td>
+    <td><%= guild.description %></td>
+    <td><%= image_tag guild.guild_image.url(:original) %></td>
+    <td><%= link_to t("action.show"), guild %></td>
+    <td><%= link_to t("action.edit"), edit_guild_path(guild) %></td>
+    <td><%= link_to t("action.destroy"), guild, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Guild', new_guild_path %>

@@ -1,4 +1,7 @@
 Imagine::Application.routes.draw do
+  resources :guilds
+
+
   resources :wishes do
     collection do
       get 'list'

@@ -1,0 +1,30 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Name:</b>
+  <%= @guild.name %>
+</p>
+
+<p>
+  <b>Description:</b>
+  <%= @guild.description %>
+</p>
+
+<p>
+  <b>Guild image file name:</b>
+  <%= @guild.guild_image_file_name %>
+</p>
+
+<p>
+  <b>Guild image content type:</b>
+  <%= @guild.guild_image_content_type %>
+</p>
+
+<p>
+  <b>Guild image file size:</b>
+  <%= @guild.guild_image_file_size %>
+</p>
+
+
+<%= link_to t("action.edit"), edit_guild_path(@guild) %> |
+<%= link_to t("common.back"), guilds_path %>
