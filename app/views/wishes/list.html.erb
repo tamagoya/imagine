@@ -11,22 +11,8 @@
         <li class="span3">
         </li>
       <% else %>
-        <li class="span3">
-        <div class="thumbnail">
-          <%= if wish.url.blank? then
-                image_tag wish.wish_image.url(:original)
-              else
-                link_to(image_tag(wish.wish_image.url(:original)), wish.url, :class => "thumbnail")
-              end %>
-          <div class="caption">
-            <h5><%= wish.title %></h5>
-            <p><%= wish.description %></p>
-            <p>
-              <%= link_to(t("action.attend"), "#", :class => "btn btn-primary") %>
-              <%= link_to(t("action.like"), "#", :class => "btn btn") %>
-            </p>
-          </div>
-        </div>
+        <li class="span3" id="<%= wish.id %>">
+          <%= render :partial => "list_area", :locals => {:wish => wish} %>
         </li>
       <% end  %>
       <% end %>

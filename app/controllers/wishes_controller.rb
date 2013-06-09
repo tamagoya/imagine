@@ -85,4 +85,16 @@ class WishesController < ApplicationController
       format.json { head :no_content }
     end
   end
+
+  # "いいね"ボタンの処理
+  def like
+    @wish  = Wish.find(params[:id])
+    @wish.like = @wish.like + 1
+    @wish.save
+
+    respond_to do |format|
+      format.html { redirect_to action: "show" , :locals => {:id => @wish}}
+      format.js
+    end
+  end
 end

@@ -11,7 +11,18 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130418163451) do
+ActiveRecord::Schema.define(:version => 20130610016543) do
+
+  create_table "guilds", :force => true do |t|
+    t.string   "name"
+    t.text     "description"
+    t.string   "guild_image_file_name"
+    t.string   "guild_image_content_type"
+    t.string   "guild_image_file_size"
+    t.datetime "created_at",               :null => false
+    t.datetime "updated_at",               :null => false
+    t.datetime "guild_image_updated_at"
+  end
 
   create_table "wishes", :force => true do |t|
     t.string   "title"
@@ -19,8 +30,11 @@ ActiveRecord::Schema.define(:version => 20130418163451) do
     t.string   "wish_image_file_name"
     t.string   "wish_image_content_type"
     t.string   "wish_image_file_size"
-    t.datetime "created_at",              :null => false
-    t.datetime "updated_at",              :null => false
+    t.datetime "created_at",                             :null => false
+    t.datetime "updated_at",                             :null => false
+    t.string   "url"
+    t.integer  "like",                    :default => 0
+    t.datetime "wish_image_updated_at"
   end
 
 end

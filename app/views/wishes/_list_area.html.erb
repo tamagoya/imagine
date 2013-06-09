@@ -1,0 +1,20 @@
+<div class="thumbnail">
+  <%= if wish.url.blank? then
+        image_tag wish.wish_image.url(:original)
+      else
+        link_to(image_tag(wish.wish_image.url(:original)), wish.url, :class => "thumbnail")
+      end %>
+  <div class="caption">
+    <h5><%= wish.title %></h5>
+    <p><%= wish.description %></p>
+    <p>
+      <% if action_name == "like" %>
+        <%= button_to(t("action.like"), {:action => "like", :id => wish.id}, :remote => true,  :class => "btn disabled", :disabled => true) %>
+        <span class="badge badge-success">いいね回数 <%= wish.like %></span>
+      <% else %>
+        <%= button_to(t("action.like"), {:action => "like", :id => wish.id}, :remote => true,  :class => "btn") %>
+        <span class="badge">いいね回数 <%= wish.like %></span>
+      <% end %>
+    </p>
+  </div>
+</div>
