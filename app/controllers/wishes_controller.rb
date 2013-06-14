@@ -12,7 +12,8 @@ class WishesController < ApplicationController
 
   # GET /wishes/list
   def list
-    @wish_rows = Wish.all.sort_by{rand}[0..14].in_groups_of(3)
+    # randomly collect 9 wishes
+    @wish_rows = Wish.all.sort_by{rand}[0..8].in_groups_of(3)
   end
 
   # GET /wishes/1
