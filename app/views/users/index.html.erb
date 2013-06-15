@@ -1,8 +1,8 @@
-<h1>users <% t("action.list") %></h1>
+<h1><%= t("activerecord.models.user") %></h1>
 
-<table>
+<table class="table">
   <tr>
-    <th>Name</th>
+    <th><%= t("activerecord.attributes.user.name") %></th>
     <th></th>
     <th></th>
     <th></th>
@@ -11,9 +11,9 @@
 <% @users.each do |user| %>
   <tr>
     <td><%= user.name %></td>
-    <td><%= link_to t("action.show"), user %></td>
-    <td><%= link_to t("action.edit"), edit_user_path(user) %></td>
-    <td><%= link_to t("action.destroy"), user, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+    <td><%= link_to t("action.show"), user, :class => "btn" %></td>
+    <td><%= link_to t("action.edit"), edit_user_path(user), :class => "btn"  %></td>
+    <td><%= link_to t("action.destroy"), user, method: :delete, data: { confirm: 'Are you sure?' }, :class => "btn btn-danger"  %></td>
   </tr>
 <% end %>
 </table>

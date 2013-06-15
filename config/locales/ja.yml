@@ -195,6 +195,7 @@ ja:
  activerecord:
    models:
      wish: 提案・要望
+     user: 利用者
      guild: ギルド
    errors:
      <<: *errors
@@ -205,6 +206,8 @@ ja:
        url: URL
        wish_image: イメージ画像
        wish_user_name: 起案者
+     user:
+       name: 名前
  action:
    new: 新規登録
    edit: 編集

@@ -47,9 +47,8 @@
           <a class="brand" href="#">Imagine</a>
           <div class="container nav-collapse">
             <ul class="nav">
-              <li><%= link_to "提案・要望", :controller => "wishes", :action => "list" %></li>
-              <li><%= link_to "ギルド", "/guilds"  %></li>
-              <li><%= link_to "Link3", "/path3"  %></li>
+              <li><%= link_to t("activerecord.models.wish"), :controller => "wishes", :action => "list" %></li>
+              <li><%= link_to t("activerecord.models.user"), "/users"  %></li>
             </ul>
           </div><!--/.nav-collapse -->
         </div>
