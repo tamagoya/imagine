@@ -29,7 +29,12 @@
   </div>
   <div class="field control-group">
     <%= label_tag :wish_user_name, t("activerecord.attributes.wish.wish_user_name"), :class => "control-label" %>
-    <%= text_field_tag :wish_user_name, @wish.wish_user_name, :class => "controls" %>
+    <% if @wish.wish_user_name.empty? then%>
+      <%= text_field_tag :wish_user_name, @wish.wish_user_name, :class => "controls" %>
+    <% else %>
+      <%= text_field_tag :wish_user_name, @wish.wish_user_name, :class => "controls", :disabled => true %>
+    <% end %>
+
   </div>
   <div class="actions control-group">
     <%= f.submit :class => "controls btn"%>
