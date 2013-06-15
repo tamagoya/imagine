@@ -27,6 +27,10 @@
     <%= f.label :wish_image, :class => "control-label"%>
     <%= f.file_field :wish_image, :class => "controls" %>
   </div>
+  <div class="field control-group">
+    <%= label_tag :wish_user_name, t("activerecord.attributes.wish.wish_user_name"), :class => "control-label" %>
+    <%= text_field_tag :wish_user_name, @wish.wish_user_name, :class => "controls" %>
+  </div>
   <div class="actions control-group">
     <%= f.submit :class => "controls btn"%>
   </div>

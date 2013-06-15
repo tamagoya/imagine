@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130610016543) do
+ActiveRecord::Schema.define(:version => 20130615014726) do
 
   create_table "guilds", :force => true do |t|
     t.string   "name"
@@ -22,6 +22,12 @@ ActiveRecord::Schema.define(:version => 20130610016543) do
     t.datetime "created_at",               :null => false
     t.datetime "updated_at",               :null => false
     t.datetime "guild_image_updated_at"
+  end
+
+  create_table "users", :force => true do |t|
+    t.string   "name"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
   end
 
   create_table "wishes", :force => true do |t|
@@ -35,6 +41,7 @@ ActiveRecord::Schema.define(:version => 20130610016543) do
     t.string   "url"
     t.integer  "like",                    :default => 0
     t.datetime "wish_image_updated_at"
+    t.integer  "user_id"
   end
 
 end

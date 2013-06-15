@@ -47,6 +47,13 @@ class WishesController < ApplicationController
   # POST /wishes.json
   def create
     @wish = Wish.new(params[:wish])
+    user_name = params[:wish_user_name]
+    wish_user = User.find_by_name(user_name)
+    if wish_user.nil? && user_name.present? then
+      wish_user = User.new(:name => user_name)
+      wish_user.save
+    end
+    @wish.user = wish_user
 
     respond_to do |format|
       if @wish.save

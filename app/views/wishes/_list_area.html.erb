@@ -6,6 +6,7 @@
       end %>
   <div class="caption">
     <h5><%= wish.title %></h5>
+    <p><%= t("activerecord.attributes.wish.wish_user_name") %>： <%= wish.wish_user_name %></p>
     <p><%= wish.description %></p>
     <p>
       <% if action_name == "like" %>
