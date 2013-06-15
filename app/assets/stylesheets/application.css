@@ -11,3 +11,7 @@
  *= require_self
  *= require_tree .
  */
+
+tbody tr.clickable:hover td {
+    cursor: pointer;
+}

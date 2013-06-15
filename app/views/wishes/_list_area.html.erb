@@ -11,11 +11,11 @@
     <p>
       <% if action_name == "like" %>
         <span class="badge badge-success">いいね回数 <%= wish.like %></span>
-        <%= button_to(t("action.like"), {:action => "like", :id => wish.id}, :remote => true,  :class => "btn btn-primary disabled", :disabled => true) %>
+        <%= button_to(t("action.like"), {:controller => "wishes", :action => "like", :id => wish.id}, :remote => true,  :class => "btn btn-primary disabled", :disabled => true) %>
         <%= link_to t("action.edit"), edit_wish_path(wish), :class => "btn" %>
       <% else %>
         <span class="badge">いいね回数 <%= wish.like %></span>
-        <%= button_to(t("action.like"), {:action => "like", :id => wish.id}, :remote => true,  :class => "btn btn-primary") %>
+        <%= button_to(t("action.like"), {:controller => "wishes", :action => "like", :id => wish.id}, :remote => true,  :class => "btn btn-primary") %>
         <%= link_to t("action.edit"), edit_wish_path(wish), :class => "btn" %>
       <% end %>
     </p>

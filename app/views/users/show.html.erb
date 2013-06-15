@@ -1,10 +1,32 @@
 <p id="notice"><%= notice %></p>
 
+<h3> プロフィール </h3>
+
 <p>
   <b>Name:</b>
   <%= @user.name %>
 </p>
 
-
 <%= link_to t("action.edit"), edit_user_path(@user) %> |
 <%= link_to t("common.back"), users_path %>
+
+<h3><%= @user.name %> の <%= t("activerecord.models.wish")%></h3>
+
+<% @wish_rows.each do |wish_row| %>
+    <div class="row">
+      <div class="span9">
+        <ul class="thumbnails">
+          <% wish_row.each do |wish| %>
+              <% if wish.nil? then %>
+                  <li class="span3">
+                  </li>
+              <% else %>
+                  <li class="span3" id="<%= wish.id %>">
+                    <%= render :partial => "wishes/list_area", :locals => {:wish => wish} %>
+                  </li>
+              <% end  %>
+          <% end %>
+        </ul>
+      </div>
+    </div>
+<% end %>
