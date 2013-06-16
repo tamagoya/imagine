@@ -195,7 +195,7 @@ ja:
  activerecord:
    models:
      wish: 提案・要望
-     user: 利用者
+     user: ユーザ
      guild: ギルド
    errors:
      <<: *errors
